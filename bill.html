@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity Bill Calculator</title>
+  <script>
+    function calculateBill() {
+      var customerId = document.getElementById('customerId').value;
+      var customerName = document.getElementById('customerName').value;
+      var unitConsumed = parseInt(document.getElementById('unitConsumed').value);
+
+      var chargePerUnit;
+      var totalAmount;
+
+      if (unitConsumed <= 199) {
+        chargePerUnit = 1.20;
+      } else if (unitConsumed >= 200 && unitConsumed < 400) {
+        chargePerUnit = 1.50;
+      } else if (unitConsumed >= 400 && unitConsumed < 600) {
+        chargePerUnit = 1.80;
+      } else {
+        chargePerUnit = 2.00;
+      }
+
+      totalAmount = unitConsumed * chargePerUnit;
+
+      if (totalAmount > 400) {
+        totalAmount += totalAmount * 0.15; 
+      }
+
+
+      totalAmount = Math.max(totalAmount, 100);
+
+      document.getElementById('result').innerHTML = `
+        <p>Customer ID: ${customerId}</p>
+        <p>Customer Name: ${customerName}</p>
+        <p>Units Consumed: ${unitConsumed}</p>
+        <p>Total Amount to be Paid: Rs. ${totalAmount.toFixed(2)}</p>
+      `;
+    }
+  </script>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Electricity Bill Calculator</h1>
+  <label for="customerId">Customer ID:</label>
+  <input type="text" id="customerId"><br><br>
+  <label for="customerName">Customer Name:</label>
+  <input type="text" id="customerName"><br><br>
+  <label for="unitConsumed">Units Consumed:</label>
+  <input type="number" id="unitConsumed"><br><br>
+  <button onclick="calculateBill()">Calculate Bill</button><br><br>
+  <div id="result"></div>
+
+
+</body>
+</html>

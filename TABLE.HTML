@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #demo {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function table() {
+            var a = parseInt(document.getElementById("t1").value);
+            var tableContent = "";
+            for (var i = 1; i <= 10; i++) {
+                var p = i * a;
+                tableContent += `${a} * ${i} = ${p}<br>`;
+            }
+            document.getElementById("demo").innerHTML = tableContent;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <label for="t1">Enter an Integer:</label>
+        <br>
+        <input type="number" id="t1">
+        <br><br>
+        <input type="button" value="Generate Table" onclick="table()">
+        <p id="demo"></p>
+    </div>
+</body>
+</html>

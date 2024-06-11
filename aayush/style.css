@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Lato", sans-serif;
+    background-image: url(bg12.jpg);
+  }
+iframe{
+  position: fixed;
+  top: 0px;
+  left:0px;
+  height: 100%;
+  width: 150px;
+}
+  h1 {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 72px;
+    color: black;
+  }
+.buttoncontainers{
+    text-align: right; 
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    background-color: purple;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  
+  button:hover {
+    background-color: #9867C5;
+    transform: translateY(-2px);
+  }
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid#9867C5;
+    padding: 8px;
+    text-align: center;
+}
+
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+marquee {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+    font-family: "lato", sans-serif;
+}
+
+div {
+    margin-bottom: 20px;
+}

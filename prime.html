@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIME NUMBER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="button"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function Prime() {
+            var a = parseInt(document.getElementById("t1").value);
+            var b = parseInt(document.getElementById("t2").value);
+            var content = "";
+            for (var i = a; i <= b; i++) {
+                if (isPrime(i)) {
+                    content += i + " ";
+                }
+            }
+            document.getElementById("demo").value = content;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="t1">Enter Starting Number</label>
+        <input type="number" id="t1">
+        <br><br>
+        <label for="t2">Enter Ending Number</label>
+        <input type="number" id="t2">
+        <br><br>
+        <label for="demo">PRIME NUMBER</label>
+        <textarea id="demo" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+        <input type="button" value="PRINT" onclick="Prime()">
+    </form>
+</body>
+</html>

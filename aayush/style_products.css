@@ -1,0 +1,43 @@
+body{
+    background-image: url("bg13.jpg");
+}
+img{
+    height: 250px;
+    width: 250px;
+}
+h1{
+    text-align: center;
+    font-size: 72px;
+    text-decoration: solid black underline;
+}
+.description{
+    font-size: 26px;
+    height: 1500px;
+    width: 1500px;
+    float: right;
+}
+.img{
+    height: 240px;
+    width: 240px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul{
+    font-size: 18px;
+    position: absolute;
+    top: 600px;
+    left: 00px;
+}
+a:link{
+    color:white;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+.link{
+    position: absolute;
+    top: 600px;
+    right: 0px;
+}
